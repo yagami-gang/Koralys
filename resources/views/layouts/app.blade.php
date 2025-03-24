@@ -184,9 +184,13 @@
                             <i class="fas fa-tools text-accent"></i>
                             <span>Services</span>
                         </a>
-                        <a href="{{ route('page.show', 'projets') }}" class="nav-link flex items-center space-x-2 px-3 py-2 transition-all duration-300">
+                        <a href="{{ route('page.show', 'projects') }}" class="nav-link flex items-center space-x-2 px-3 py-2 transition-all duration-300">
                             <i class="fas fa-building text-accent"></i>
                             <span>Projets</span>
+                        </a>
+                        <a href="{{ route('page.show', 'faqs') }}" class="nav-link flex items-center space-x-2 px-3 py-2 transition-all duration-300">
+                            <i class="fas fa-question-circle text-accent"></i>
+                            <span>FAQs</span>
                         </a>
                         <a href="{{ route('contact') }}" class="button-primary flex items-center space-x-2 px-8 py-3 rounded-full shadow-lg">
                             <i class="fas fa-envelope"></i>
@@ -218,10 +222,16 @@
                             <span>Services</span>
                         </div>
                     </a>
-                    <a href="{{ route('page.show', 'projets') }}" class="nav-link block px-3 py-4 rounded-md text-base font-medium border-b border-gray-100">
+                    <a href="{{ route('page.show', 'projects') }}" class="nav-link block px-3 py-4 rounded-md text-base font-medium border-b border-gray-100">
                         <div class="flex items-center space-x-3">
                             <i class="fas fa-building text-accent"></i>
                             <span>Projets</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('page.show', 'faqs') }}" class="nav-link block px-3 py-4 rounded-md text-base font-medium border-b border-gray-100">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-question-circle text-accent"></i>
+                            <span>FAQs</span>
                         </div>
                     </a>
                     <a href="{{ route('contact') }}" class="block px-3 py-4 rounded-md text-base font-medium">

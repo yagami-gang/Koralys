@@ -624,24 +624,56 @@
                     <div>
                         <div class="bg-white p-8 rounded-2xl shadow-2xl border border-blue-100">
                             <h3 class="text-2xl font-bold text-blue-800 mb-6">Envoyez-nous un message</h3>
-                            <form action="#" method="POST" class="space-y-6">
+                            <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+                                @csrf
+                                
+                                @if(session('success'))
+                                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                        <span class="block sm:inline">{{ session('success') }}</span>
+                                    </div>
+                                @endif
+                                
+                                @if(session('error'))
+                                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                        <span class="block sm:inline">{{ session('error') }}</span>
+                                    </div>
+                                @endif
+                                
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label for="name" class="block text-sm font-medium text-blue-700 mb-1">Nom complet</label>
-                                        <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300">
+                                        <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('name') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
+                                        @error('name')
+                                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                     <div>
                                         <label for="email" class="block text-sm font-medium text-blue-700 mb-1">Email</label>
-                                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300">
+                                        <input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('email') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
+                                        @error('email')
+                                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div>
                                     <label for="subject" class="block text-sm font-medium text-blue-700 mb-1">Sujet</label>
-                                    <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300">
+                                    <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700" required>
+                                        <option value="">Sélectionnez un sujet</option>
+                                        <option value="devis">Demande de devis</option>
+                                        <option value="information">Demande d'information</option>
+                                        <option value="recrutement">Recrutement</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-blue-700 mb-1">Message</label>
-                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300"></textarea>
+                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required></textarea>
+                                </div>
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="privacy" name="privacy" class="mt-1 mr-2" required>
+                                    <label for="privacy" class="text-blue-700 text-sm">
+                                        J'accepte que mes données soient traitées conformément à la <a href="#" class="text-blue-600 hover:underline">politique de confidentialité</a>.
+                                    </label>
                                 </div>
                                 <div>
                                     <button type="submit" class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
@@ -658,29 +690,6 @@
             </div>
         </section>
     
-        <!-- Section Carte -->
-        <section class="h-[500px] relative bg-gray-200">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142!2d2.3488!3d48.8534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzEyLjIiTiAywrAyMCc1NS43IkU!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade" 
-                class="absolute inset-0 z-10"
-            ></iframe>
-            <div class="absolute top-8 left-8 bg-white p-6 rounded-xl shadow-xl max-w-sm z-20">
-                <h3 class="text-xl font-bold text-secondary mb-2">KORALYS SARL</h3>
-                <p class="text-gray-600 mb-4">Votre partenaire de confiance pour tous vos projets de construction</p>
-                <a href="#contact" class="inline-flex items-center text-primary font-semibold hover:text-accent">
-                    Contactez-nous
-                    <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
-            </div>
-        </section>
     @endsection
         
         @push('scripts')

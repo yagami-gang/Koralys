@@ -106,51 +106,43 @@
                     </div>
                 </div>
                 
-                <!-- Formulaire de Contact -->
-                <div data-aos="fade-left">
-                    <h2 class="text-3xl font-bold text-secondary mb-6">Envoyez-nous un message</h2>
-                    <div class="w-24 h-1 bg-accent mb-10"></div>
-                    
-                    <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
-                        @csrf
-                        
-                        @if(session('success'))
-                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                                <span class="block sm:inline">{{ session('success') }}</span>
-                            </div>
-                        @endif
-                        
-                        @if(session('error'))
-                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                                <span class="block sm:inline">{{ session('error') }}</span>
-                            </div>
-                        @endif
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
-                                <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-input w-full px-4 py-3 border @error('name') border-red-500 @else border-gray-300 @enderror rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                                @error('name')
-                                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                                <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-input w-full px-4 py-3 border @error('email') border-red-500 @else border-gray-300 @enderror rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                                @error('email')
-                                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                                @enderror
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
-                                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-2xl border border-blue-100">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Envoyez-nous un message</h3>
+                        <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+                            @csrf
+                            
+                            @if(session('success'))
+                                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                    <span class="block sm:inline">{{ session('success') }}</span>
+                                </div>
+                            @endif
+                            
+                            @if(session('error'))
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                    <span class="block sm:inline">{{ session('error') }}</span>
+                                </div>
+                            @endif
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-blue-700 mb-1">Nom complet</label>
+                                    <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('name') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
+                                    @error('name')
+                                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-blue-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('email') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
+                                    @error('email')
+                                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                    @enderror
+                                </div>
                             </div>
                             <div>
-                                <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
-                                <select id="subject" name="subject" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <label for="subject" class="block text-sm font-medium text-blue-700 mb-1">Sujet</label>
+                                <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700" required>
                                     <option value="">Sélectionnez un sujet</option>
                                     <option value="devis">Demande de devis</option>
                                     <option value="information">Demande d'information</option>
@@ -158,50 +150,27 @@
                                     <option value="autre">Autre</option>
                                 </select>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" name="message" rows="6" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <input type="checkbox" id="privacy" name="privacy" class="mt-1 mr-2" required>
-                            <label for="privacy" class="text-gray-600 text-sm">
-                                J'accepte que mes données soient traitées conformément à la <a href="#" class="text-primary hover:underline">politique de confidentialité</a>.
-                            </label>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="submit-button px-8 py-4 bg-accent text-white rounded-lg shadow-lg hover:bg-accent/90 transition-all duration-300 font-semibold text-lg">
-                                Envoyer le message
-                            </button>
-                        </div>
-                    </form>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-blue-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required></textarea>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="privacy" name="privacy" class="mt-1 mr-2" required>
+                                <label for="privacy" class="text-blue-700 text-sm">
+                                    J'accepte que mes données soient traitées conformément à la <a href="#" class="text-blue-600 hover:underline">politique de confidentialité</a>.
+                                </label>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                    Envoyer le message
+                                    <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Carte -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-secondary mb-4">Notre Emplacement</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Venez nous rencontrer dans nos bureaux pour discuter de votre projet.
-                </p>
-            </div>
-            
-            <div class="h-96 rounded-2xl overflow-hidden shadow-xl" data-aos="zoom-in">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937604!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1621956217240!5m2!1sfr!2sfr" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                </iframe>
             </div>
         </div>
     </section>
