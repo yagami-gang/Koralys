@@ -81,117 +81,117 @@
 
 @section('content')
     <!-- Hero Section avec Slider Moderne -->
-    <section class="relative min-h-screen flex items-center overflow-hidden">
+    <section class="relative flex items-center min-h-screen overflow-hidden">
         <!-- Slider principal avec overlay amélioré -->
         <div class="absolute inset-0 z-0" id="hero-slider">
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
                 <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70"></div>
-                <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f" alt="Construction Modern" class="w-full h-full object-cover scale-110 filter brightness-75">
+                <img src="{{asset('images/photo-1590381105924-c72589b9ef3f.jpeg') }}" alt="Construction Modern" class="object-cover w-full h-full scale-110 filter brightness-75">
             </div>
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
                 <div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-transparent"></div>
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Architecture" class="w-full h-full object-cover">
+                <img src="{{asset('images/photo-1504307651254-35680f356dfd.jpeg') }}" alt="Architecture" class="object-cover w-full h-full">
             </div>
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+            <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
                 <div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-transparent"></div>
-                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece" alt="Innovation" class="w-full h-full object-cover">
+                <img src="{{ asset('images/photo-1581094288338-2314dddb7ece.jpeg') }}" alt="Innovation" class="object-cover w-full h-full">
             </div>
         </div>
-    
+
         <!-- Contenu principal avec meilleur contraste -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <!-- Texte et CTA avec fond semi-transparent -->
-                <div class="text-left p-10 rounded-2xl bg-secondary/70 backdrop-blur-md border border-white/10 shadow-2xl">
-                    <h1 class="text-5xl sm:text-7xl font-bold text-white mb-6 opacity-0 drop-shadow-lg" id="hero-title">
-                        KORALYS <span class="text-accent font-extrabold">SARL</span>
+                <div class="p-10 text-left border shadow-2xl rounded-2xl bg-secondary/70 backdrop-blur-md border-white/10">
+                    <h1 class="mb-6 text-5xl font-bold text-white opacity-0 sm:text-7xl drop-shadow-lg" id="hero-title">
+                        KORALYS <span class="font-extrabold text-accent">SARL</span>
                     </h1>
-                    <div class="w-24 h-2 bg-accent mb-8 transform -translate-x-full shadow-lg" id="hero-line"></div>
-                    <p class="text-xl sm:text-2xl text-white mb-12 opacity-0 font-light max-w-xl text-shadow" id="hero-subtitle">
+                    <div class="w-24 h-2 mb-8 transform -translate-x-full shadow-lg bg-accent" id="hero-line"></div>
+                    <p class="max-w-xl mb-12 text-xl font-light text-white opacity-0 sm:text-2xl text-shadow" id="hero-subtitle">
                         Excellence et innovation dans la construction, façonnant l'avenir de vos projets
                     </p>
                     <div class="flex flex-wrap gap-4 opacity-0" id="hero-cta">
-                        <a href="#projects" class="group bg-accent text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 flex items-center gap-2 shadow-lg">
+                        <a href="#projects" class="flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group bg-accent hover:bg-accent/90">
                             Nos Réalisations
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-transform transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                         </a>
-                        <a href="#contact" class="group bg-white text-secondary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+                        <a href="#contact" class="px-8 py-4 text-lg font-semibold transition-all duration-300 bg-white rounded-lg shadow-lg group text-secondary hover:bg-gray-100">
                             Contactez-nous
                         </a>
                     </div>
                 </div>
-    
+
                 <!-- Slider des services avec meilleur contraste -->
                 <div class="hidden lg:block">
-                    <div class="relative overflow-hidden rounded-2xl shadow-2xl" id="services-slider">
-                        <div class="services-slide bg-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/20 transform transition-all duration-500 hover:scale-105">
+                    <div class="relative overflow-hidden shadow-2xl rounded-2xl" id="services-slider">
+                        <div class="p-8 transition-all duration-500 transform border services-slide bg-secondary/80 backdrop-blur-md rounded-2xl border-white/20 hover:scale-105">
                             <div class="text-white">
-                                <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6">
-                                    <i class="fas fa-building text-4xl text-white"></i>
+                                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-accent/20">
+                                    <i class="text-4xl text-white fas fa-building"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-3 text-shadow-sm">Construction Durable</h3>
-                                <p class="text-white/90 leading-relaxed text-lg">Des projets innovants respectueux de l'environnement</p>
+                                <h3 class="mb-3 text-2xl font-bold text-shadow-sm">Construction Durable</h3>
+                                <p class="text-lg leading-relaxed text-white/90">Des projets innovants respectueux de l'environnement</p>
                             </div>
                         </div>
-                        <div class="services-slide bg-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/20 transform transition-all duration-500 hover:scale-105">
+                        <div class="p-8 transition-all duration-500 transform border services-slide bg-secondary/80 backdrop-blur-md rounded-2xl border-white/20 hover:scale-105">
                             <div class="text-white">
-                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-                                    <i class="fas fa-drafting-compass text-4xl text-white"></i>
+                                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary/20">
+                                    <i class="text-4xl text-white fas fa-drafting-compass"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-3 text-shadow-sm">Design Architectural</h3>
-                                <p class="text-white/90 leading-relaxed text-lg">Créativité et fonctionnalité pour vos espaces</p>
+                                <h3 class="mb-3 text-2xl font-bold text-shadow-sm">Design Architectural</h3>
+                                <p class="text-lg leading-relaxed text-white/90">Créativité et fonctionnalité pour vos espaces</p>
                             </div>
                         </div>
-                        <div class="services-slide bg-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/20 transform transition-all duration-500 hover:scale-105">
+                        <div class="p-8 transition-all duration-500 transform border services-slide bg-secondary/80 backdrop-blur-md rounded-2xl border-white/20 hover:scale-105">
                             <div class="text-white">
-                                <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
-                                    <i class="fas fa-hard-hat text-4xl text-white"></i>
+                                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-secondary/20">
+                                    <i class="text-4xl text-white fas fa-hard-hat"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-3 text-shadow-sm">Expertise BTP</h3>
-                                <p class="text-white/90 leading-relaxed text-lg">Plus de 15 ans d'excellence dans la construction</p>
+                                <h3 class="mb-3 text-2xl font-bold text-shadow-sm">Expertise BTP</h3>
+                                <p class="text-lg leading-relaxed text-white/90">Plus de 15 ans d'excellence dans la construction</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <!-- Indicateurs de slide améliorés -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-20">
-            <button class="w-4 h-4 rounded-full bg-white/30 hover:bg-white transition-colors duration-300 slider-dot active border-2 border-accent"></button>
-            <button class="w-4 h-4 rounded-full bg-white/30 hover:bg-white transition-colors duration-300 slider-dot border-2 border-white/50"></button>
-            <button class="w-4 h-4 rounded-full bg-white/30 hover:bg-white transition-colors duration-300 slider-dot border-2 border-white/50"></button>
+        <div class="absolute z-20 flex space-x-4 transform -translate-x-1/2 bottom-8 left-1/2">
+            <button class="w-4 h-4 transition-colors duration-300 border-2 rounded-full bg-white/30 hover:bg-white slider-dot active border-accent"></button>
+            <button class="w-4 h-4 transition-colors duration-300 border-2 rounded-full bg-white/30 hover:bg-white slider-dot border-white/50"></button>
+            <button class="w-4 h-4 transition-colors duration-300 border-2 rounded-full bg-white/30 hover:bg-white slider-dot border-white/50"></button>
         </div>
     </section>
 
     <!-- Section Chiffres Clés avec effet parallax -->
-    <section class="relative py-16 bg-primary clip-path-diagonal text-white overflow-hidden">
+    <section class="relative py-16 overflow-hidden text-white bg-primary clip-path-diagonal">
         <div class="absolute inset-0 z-0 opacity-70">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" alt="Background" class="w-full h-full object-cover">
+            <img src="{{ asset('images/photo-1541888946425-d81bb19240f5.jpeg') }}" alt="Background" class="object-cover w-full h-full">
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white mb-4 text-shadow-lg">Nos Chiffres Clés</h2>
-                <div class="w-24 h-1 bg-accent mx-auto shadow-lg"></div>
+        <div class="relative z-10 px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-4xl font-bold text-white text-shadow-lg">Nos Chiffres Clés</h2>
+                <div class="w-24 h-1 mx-auto shadow-lg bg-accent"></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center p-8 rounded-xl bg-white/10 backdrop-blur-sm shadow-lg border border-white/10 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
-                    <div class="text-5xl font-bold text-accent mb-2 counter drop-shadow-lg" data-target="150">0</div>
-                    <p class="text-white/90 font-medium drop-shadow">Projets Réalisés</p>
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="p-8 text-center transition-all duration-300 border shadow-lg rounded-xl bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/20" data-aos="fade-up" data-aos-delay="0">
+                    <div class="mb-2 text-5xl font-bold text-accent counter drop-shadow-lg" data-target="150">0</div>
+                    <p class="font-medium text-white/90 drop-shadow">Projets Réalisés</p>
                 </div>
-                <div class="text-center p-8 rounded-xl bg-white/10 backdrop-blur-sm shadow-lg border border-white/10 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl font-bold text-accent mb-2 counter drop-shadow-lg" data-target="15">0</div>
-                    <p class="text-white/90 font-medium drop-shadow">Années d'Expérience</p>
+                <div class="p-8 text-center transition-all duration-300 border shadow-lg rounded-xl bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-2 text-5xl font-bold text-accent counter drop-shadow-lg" data-target="15">0</div>
+                    <p class="font-medium text-white/90 drop-shadow">Années d'Expérience</p>
                 </div>
-                <div class="text-center p-8 rounded-xl bg-white/10 backdrop-blur-sm shadow-lg border border-white/10 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl font-bold text-accent mb-2 counter drop-shadow-lg" data-target="50">0</div>
-                    <p class="text-white/90 font-medium drop-shadow">Professionnels</p>
+                <div class="p-8 text-center transition-all duration-300 border shadow-lg rounded-xl bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-2 text-5xl font-bold text-accent counter drop-shadow-lg" data-target="50">0</div>
+                    <p class="font-medium text-white/90 drop-shadow">Professionnels</p>
                 </div>
-                <div class="text-center p-8 rounded-xl bg-white/10 backdrop-blur-sm shadow-lg border border-white/10 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-5xl font-bold text-accent mb-2 counter drop-shadow-lg" data-target="98">0</div>
-                    <p class="text-white/90 font-medium drop-shadow">Clients Satisfaits</p>
+                <div class="p-8 text-center transition-all duration-300 border shadow-lg rounded-xl bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-2 text-5xl font-bold text-accent counter drop-shadow-lg" data-target="98">0</div>
+                    <p class="font-medium text-white/90 drop-shadow">Clients Satisfaits</p>
                 </div>
             </div>
         </div>
@@ -199,69 +199,69 @@
 
     <!-- Section À Propos -->
     <section class="py-24 section-pattern" id="about">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
                 <div class="relative" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Notre équipe" 
+                    <img src="{{ asset('images/photo-1504307651254-35680f356dfd.jpeg') }}" alt="Notre équipe"
                          class="rounded-2xl shadow-2xl w-full h-[600px] object-cover">
-                    <div class="absolute -bottom-8 -right-8 bg-accent p-8 rounded-2xl shadow-xl text-white">
+                    <div class="absolute p-8 text-white shadow-xl -bottom-8 -right-8 bg-accent rounded-2xl">
                         <div class="text-4xl font-bold">15+</div>
                         <div class="text-white/90">Années d'expertise</div>
                     </div>
                 </div>
                 <div data-aos="fade-left">
-                    <h2 class="text-4xl font-bold text-secondary mb-6">Notre Engagement pour l'Excellence</h2>
-                    <div class="w-24 h-1 bg-accent mb-8"></div>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    <h2 class="mb-6 text-4xl font-bold text-secondary">Notre Engagement pour l'Excellence</h2>
+                    <div class="w-24 h-1 mb-8 bg-accent"></div>
+                    <p class="mb-8 text-xl leading-relaxed text-gray-600">
                         Depuis plus de 15 ans, KORALYS SARL s'engage à transformer vos visions en réalités architecturales exceptionnelles.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+                        <div class="flex items-start p-6 space-x-4 bg-white shadow-lg rounded-xl card-hover">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-check text-xl"></i>
+                                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary">
+                                    <i class="text-xl fas fa-check"></i>
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary mb-2">Qualité Premium</h3>
+                                <h3 class="mb-2 text-lg font-semibold text-secondary">Qualité Premium</h3>
                                 <p class="text-gray-600">Des matériaux et finitions haut de gamme</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-start p-6 space-x-4 bg-white shadow-lg rounded-xl card-hover">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-clock text-xl"></i>
+                                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary">
+                                    <i class="text-xl fas fa-clock"></i>
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary mb-2">Délais Respectés</h3>
+                                <h3 class="mb-2 text-lg font-semibold text-secondary">Délais Respectés</h3>
                                 <p class="text-gray-600">Livraison dans les temps convenus</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-start p-6 space-x-4 bg-white shadow-lg rounded-xl card-hover">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-users text-xl"></i>
+                                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary">
+                                    <i class="text-xl fas fa-users"></i>
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary mb-2">Équipe Experte</h3>
+                                <h3 class="mb-2 text-lg font-semibold text-secondary">Équipe Experte</h3>
                                 <p class="text-gray-600">Des professionnels qualifiés et passionnés</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-start p-6 space-x-4 bg-white shadow-lg rounded-xl card-hover">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-leaf text-xl"></i>
+                                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary">
+                                    <i class="text-xl fas fa-leaf"></i>
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-secondary mb-2">Éco-responsable</h3>
+                                <h3 class="mb-2 text-lg font-semibold text-secondary">Éco-responsable</h3>
                                 <p class="text-gray-600">Engagement pour un avenir durable</p>
                             </div>
                         </div>
                     </div>
-                    <a href="#services" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent to-primary text-white rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold text-lg">
+                    <a href="#services" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform rounded-lg shadow-xl bg-gradient-to-r from-accent to-primary hover:shadow-2xl hover:-translate-y-1">
                         Découvrir nos services
                         <svg class="w-6 h-6 ml-3 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -274,61 +274,58 @@
 
     <!-- Section Services Détaillés -->
     <section class="py-24 bg-gradient-to-b from-white to-gray-100 clip-path-diagonal-reverse" id="services">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-secondary mb-4">Nos Services</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="mb-4 text-4xl font-bold text-secondary">Nos Services</h2>
+                <div class="w-24 h-1 mx-auto mb-8 bg-accent"></div>
+                <p class="max-w-3xl mx-auto text-xl text-gray-700">
                     Une gamme complète de services pour répondre à tous vos besoins en construction et rénovation.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border-t-4 border-primary" 
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <div class="p-8 transition-all duration-500 bg-white border-t-4 shadow-lg group rounded-2xl hover:shadow-2xl border-primary"
                      data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 
-                                group-hover:bg-primary group-hover:rotate-6 transition-all duration-300">
-                        <i class="fas fa-building text-3xl text-primary group-hover:text-gray-200 transition-colors duration-300"></i>
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 transition-all duration-300 bg-primary/10 rounded-xl group-hover:bg-primary group-hover:rotate-6">
+                        <i class="text-3xl transition-colors duration-300 fas fa-building text-primary group-hover:text-gray-200"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-secondary mb-4">Construction Neuve</h3>
-                    <p class="text-gray-700 mb-6">Des projets résidentiels et commerciaux sur mesure, conçus pour répondre à vos besoins spécifiques avec une attention particulière aux détails.</p>
-                    <a href="#contact" class="inline-flex items-center text-primary font-semibold group-hover:text-accent">
+                    <h3 class="mb-4 text-2xl font-bold text-secondary">Construction Neuve</h3>
+                    <p class="mb-6 text-gray-700">Des projets résidentiels et commerciaux sur mesure, conçus pour répondre à vos besoins spécifiques avec une attention particulière aux détails.</p>
+                    <a href="#contact" class="inline-flex items-center font-semibold text-primary group-hover:text-accent">
                         En savoir plus
-                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
+                        <svg class="w-5 h-5 ml-2 transition-transform transform group-hover:translate-x-2"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
                 </div>
-                
-                <div class="group p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border-t-4 border-accent" 
+
+                <div class="p-8 transition-all duration-500 bg-white border-t-4 shadow-lg group rounded-2xl hover:shadow-2xl border-accent"
                      data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 
-                                group-hover:bg-accent group-hover:rotate-6 transition-all duration-300">
-                        <i class="fas fa-hammer text-3xl text-accent group-hover:text-gray-200 transition-colors duration-300"></i>
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 transition-all duration-300 bg-accent/10 rounded-xl group-hover:bg-accent group-hover:rotate-6">
+                        <i class="text-3xl transition-colors duration-300 fas fa-hammer text-accent group-hover:text-gray-200"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-secondary mb-4">Rénovation</h3>
-                    <p class="text-gray-700 mb-6">Transformez vos espaces existants avec notre expertise en rénovation, alliant modernité et respect du caractère original de votre bâtiment.</p>
-                    <a href="#contact" class="inline-flex items-center text-accent font-semibold group-hover:text-primary">
+                    <h3 class="mb-4 text-2xl font-bold text-secondary">Rénovation</h3>
+                    <p class="mb-6 text-gray-700">Transformez vos espaces existants avec notre expertise en rénovation, alliant modernité et respect du caractère original de votre bâtiment.</p>
+                    <a href="#contact" class="inline-flex items-center font-semibold text-accent group-hover:text-primary">
                         En savoir plus
-                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
+                        <svg class="w-5 h-5 ml-2 transition-transform transform group-hover:translate-x-2"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
                 </div>
-                
-                <div class="group p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border-t-4 border-secondary" 
+
+                <div class="p-8 transition-all duration-500 bg-white border-t-4 shadow-lg group rounded-2xl hover:shadow-2xl border-secondary"
                      data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 
-                                group-hover:bg-secondary group-hover:rotate-6 transition-all duration-300">
-                        <i class="fas fa-drafting-compass text-3xl text-secondary group-hover:text-gray-200 transition-colors duration-300"></i>
+                    <div class="flex items-center justify-center w-16 h-16 mb-6 transition-all duration-300 bg-secondary/10 rounded-xl group-hover:bg-secondary group-hover:rotate-6">
+                        <i class="text-3xl transition-colors duration-300 fas fa-drafting-compass text-secondary group-hover:text-gray-200"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-secondary mb-4">Design Architectural</h3>
-                    <p class="text-gray-700 mb-6">Créez des espaces qui reflètent votre vision avec notre équipe de designers architecturaux, combinant esthétique et fonctionnalité.</p>
-                    <a href="#contact" class="inline-flex items-center text-secondary font-semibold group-hover:text-accent">
+                    <h3 class="mb-4 text-2xl font-bold text-secondary">Design Architectural</h3>
+                    <p class="mb-6 text-gray-700">Créez des espaces qui reflètent votre vision avec notre équipe de designers architecturaux, combinant esthétique et fonctionnalité.</p>
+                    <a href="#contact" class="inline-flex items-center font-semibold text-secondary group-hover:text-accent">
                         En savoir plus
-                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" 
+                        <svg class="w-5 h-5 ml-2 transition-transform transform group-hover:translate-x-2"
                              fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -339,42 +336,42 @@
     </section>
 
     <!-- Section Projets avec Filtres -->
-    <section class="py-24 bg-gradient-to-b from-gray-900 to-secondary text-white" id="projects">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">Nos Réalisations</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
-                <p class="text-xl text-white/80 max-w-3xl mx-auto">
+    <section class="py-24 text-white bg-gradient-to-b from-gray-900 to-secondary" id="projects">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="mb-4 text-4xl font-bold text-white">Nos Réalisations</h2>
+                <div class="w-24 h-1 mx-auto mb-8 bg-accent"></div>
+                <p class="max-w-3xl mx-auto text-xl text-white/80">
                     Découvrez nos projets les plus remarquables, témoignant de notre savoir-faire et de notre engagement envers l'excellence.
                 </p>
             </div>
 
-            <div class="flex justify-center mb-12 space-x-4 flex-wrap">
-                <button class="px-6 py-3 rounded-full bg-accent text-white hover:bg-accent/90 transition-colors mb-2" data-filter="all">
+            <div class="flex flex-wrap justify-center mb-12 space-x-4">
+                <button class="px-6 py-3 mb-2 text-white transition-colors rounded-full bg-accent hover:bg-accent/90" data-filter="all">
                     Tous les projets
                 </button>
-                <button class="px-6 py-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors mb-2" data-filter="residential">
+                <button class="px-6 py-3 mb-2 text-white transition-colors rounded-full bg-white/10 hover:bg-white/20" data-filter="residential">
                     Résidentiel
                 </button>
-                <button class="px-6 py-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors mb-2" data-filter="commercial">
+                <button class="px-6 py-3 mb-2 text-white transition-colors rounded-full bg-white/10 hover:bg-white/20" data-filter="commercial">
                     Commercial
                 </button>
-                <button class="px-6 py-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors mb-2" data-filter="industrial">
+                <button class="px-6 py-3 mb-2 text-white transition-colors rounded-full bg-white/10 hover:bg-white/20" data-filter="industrial">
                     Industriel
                 </button>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <!-- Projet 1 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up" data-category="commercial">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" 
-                         alt="Centre Commercial Modern" 
-                         class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div class="relative overflow-hidden shadow-lg group rounded-2xl" data-aos="fade-up" data-category="commercial">
+                    <img src="{{ asset('images/photo-1503387762-592deb58ef4e.jpeg') }}"
+                         alt="Centre Commercial Modern"
+                         class="object-cover w-full transition-transform duration-500 transform h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-all duration-300 opacity-0 bg-gradient-to-t from-secondary/90 to-transparent group-hover:opacity-100">
                         <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Centre Commercial Modern</h3>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Centre Commercial Modern</h3>
                             <p class="text-white/90">Construction neuve - 2023</p>
-                            <a href="#" class="mt-4 inline-flex items-center text-accent font-medium">
+                            <a href="#" class="inline-flex items-center mt-4 font-medium text-accent">
                                 Voir le projet
                                 <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -383,17 +380,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Projet 2 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100" data-category="residential">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" 
-                         alt="Résidence de Luxe" 
-                         class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div class="relative overflow-hidden shadow-lg group rounded-2xl" data-aos="fade-up" data-aos-delay="100" data-category="residential">
+                    <img src="{{ asset('images/photo-1600585154340-be6161a56a0c.jpeg') }}"
+                         alt="Résidence de Luxe"
+                         class="object-cover w-full transition-transform duration-500 transform h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-all duration-300 opacity-0 bg-gradient-to-t from-secondary/90 to-transparent group-hover:opacity-100">
                         <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Résidence de Luxe</h3>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Résidence de Luxe</h3>
                             <p class="text-white/90">Construction neuve - 2022</p>
-                            <a href="#" class="mt-4 inline-flex items-center text-accent font-medium">
+                            <a href="#" class="inline-flex items-center mt-4 font-medium text-accent">
                                 Voir le projet
                                 <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -402,17 +399,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Projet 3 -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200" data-category="industrial">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" 
-                         alt="Complexe Industriel" 
-                         class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div class="relative overflow-hidden shadow-lg group rounded-2xl" data-aos="fade-up" data-aos-delay="200" data-category="industrial">
+                    <img src="{{ asset('images/photo-1581094794329-c8112a89af1244.jpeg') }}"
+                         alt="Complexe Industriel"
+                         class="object-cover w-full transition-transform duration-500 transform h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-all duration-300 opacity-0 bg-gradient-to-t from-secondary/90 to-transparent group-hover:opacity-100">
                         <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Complexe Industriel</h3>
+                            <h3 class="mb-2 text-2xl font-bold text-white">Complexe Industriel</h3>
                             <p class="text-white/90">Construction neuve - 2021</p>
-                            <a href="#" class="mt-4 inline-flex items-center text-accent font-medium">
+                            <a href="#" class="inline-flex items-center mt-4 font-medium text-accent">
                                 Voir le projet
                                 <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -422,9 +419,9 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                <a href="/projets" class="inline-flex items-center px-8 py-4 bg-accent text-white rounded-lg shadow-lg hover:bg-accent/90 transition-all duration-300">
+
+            <div class="mt-12 text-center">
+                <a href="/projets" class="inline-flex items-center px-8 py-4 text-white transition-all duration-300 rounded-lg shadow-lg bg-accent hover:bg-accent/90">
                     Voir tous nos projets
                     <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -435,35 +432,35 @@
     </section>
 
         <!-- Section Témoignages avec Slider -->
-        <section class="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden" id="testimonials">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-secondary mb-4">Ce que disent nos clients</h2>
-                    <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <section class="py-24 overflow-hidden bg-gradient-to-b from-white to-gray-50" id="testimonials">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-secondary">Ce que disent nos clients</h2>
+                    <div class="w-24 h-1 mx-auto mb-8 bg-accent"></div>
+                    <p class="max-w-3xl mx-auto text-xl text-gray-600">
                         La satisfaction de nos clients est notre priorité absolue. Découvrez leurs expériences avec KORALYS.
                     </p>
                 </div>
-    
+
                 <div class="relative testimonials-slider">
                     <div class="swiper-wrapper">
                         <!-- Témoignage 1 -->
                         <div class="swiper-slide">
-                            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <div class="p-8 bg-white border border-gray-100 shadow-xl rounded-2xl">
                                 <div class="flex items-center mb-6">
-                                    <div class="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-accent">
-                                        <img src="https://i.pravatar.cc/150?img=1" alt="Client" class="w-full h-full object-cover">
+                                    <div class="w-16 h-16 mr-4 overflow-hidden border-2 rounded-full border-accent">
+                                        <img src="{{ asset('images/150.jpeg') }}" alt="Client" class="object-cover w-full h-full">
                                     </div>
                                     <div>
                                         <h4 class="text-xl font-semibold text-secondary">Jean Dupont</h4>
                                         <p class="text-gray-600">Directeur Général - Enterprise XYZ</p>
                                     </div>
                                     <div class="ml-auto">
-                                        <i class="fas fa-quote-right text-4xl text-accent/20"></i>
+                                        <i class="text-4xl fas fa-quote-right text-accent/20"></i>
                                     </div>
                                 </div>
                                 <div class="mb-6">
-                                    <div class="flex text-accent mb-2">
+                                    <div class="flex mb-2 text-accent">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -471,31 +468,31 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                 </div>
-                                <p class="text-gray-700 italic">
-                                    "Une équipe professionnelle qui a su mener notre projet avec excellence. 
-                                    Les délais ont été respectés et le résultat dépasse nos attentes. Je recommande 
+                                <p class="italic text-gray-700">
+                                    "Une équipe professionnelle qui a su mener notre projet avec excellence.
+                                    Les délais ont été respectés et le résultat dépasse nos attentes. Je recommande
                                     vivement KORALYS pour tout projet de construction d'envergure."
                                 </p>
                             </div>
                         </div>
-                        
+
                         <!-- Témoignage 2 -->
                         <div class="swiper-slide">
-                            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <div class="p-8 bg-white border border-gray-100 shadow-xl rounded-2xl">
                                 <div class="flex items-center mb-6">
-                                    <div class="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-accent">
-                                        <img src="https://i.pravatar.cc/150?img=2" alt="Client" class="w-full h-full object-cover">
+                                    <div class="w-16 h-16 mr-4 overflow-hidden border-2 rounded-full border-accent">
+                                        <img src="{{ asset('images/151.jpeg') }}" alt="Client" class="object-cover w-full h-full">
                                     </div>
                                     <div>
                                         <h4 class="text-xl font-semibold text-secondary">Marie Laurent</h4>
                                         <p class="text-gray-600">Propriétaire - Résidence Privée</p>
                                     </div>
                                     <div class="ml-auto">
-                                        <i class="fas fa-quote-right text-4xl text-accent/20"></i>
+                                        <i class="text-4xl fas fa-quote-right text-accent/20"></i>
                                     </div>
                                 </div>
                                 <div class="mb-6">
-                                    <div class="flex text-accent mb-2">
+                                    <div class="flex mb-2 text-accent">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -503,31 +500,31 @@
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
-                                <p class="text-gray-700 italic">
-                                    "La rénovation de notre maison familiale a été transformée en une expérience 
-                                    agréable grâce à l'équipe de KORALYS. Leur attention aux détails et leur 
+                                <p class="italic text-gray-700">
+                                    "La rénovation de notre maison familiale a été transformée en une expérience
+                                    agréable grâce à l'équipe de KORALYS. Leur attention aux détails et leur
                                     capacité à comprendre nos besoins ont fait toute la différence."
                                 </p>
                             </div>
                         </div>
-                        
+
                         <!-- Témoignage 3 -->
                         <div class="swiper-slide">
-                            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <div class="p-8 bg-white border border-gray-100 shadow-xl rounded-2xl">
                                 <div class="flex items-center mb-6">
-                                    <div class="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-accent">
-                                        <img src="https://i.pravatar.cc/150?img=3" alt="Client" class="w-full h-full object-cover">
+                                    <div class="w-16 h-16 mr-4 overflow-hidden border-2 rounded-full border-accent">
+                                        <img src="{{ asset('images/152.jpeg') }}" alt="Client" class="object-cover w-full h-full">
                                     </div>
                                     <div>
                                         <h4 class="text-xl font-semibold text-secondary">Philippe Martin</h4>
                                         <p class="text-gray-600">Architecte - Studio Design</p>
                                     </div>
                                     <div class="ml-auto">
-                                        <i class="fas fa-quote-right text-4xl text-accent/20"></i>
+                                        <i class="text-4xl fas fa-quote-right text-accent/20"></i>
                                     </div>
                                 </div>
                                 <div class="mb-6">
-                                    <div class="flex text-accent mb-2">
+                                    <div class="flex mb-2 text-accent">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -535,129 +532,129 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                 </div>
-                                <p class="text-gray-700 italic">
-                                    "En tant qu'architecte, je suis particulièrement exigeant sur la qualité d'exécution. 
-                                    KORALYS a dépassé mes attentes avec leur expertise technique et leur capacité 
+                                <p class="italic text-gray-700">
+                                    "En tant qu'architecte, je suis particulièrement exigeant sur la qualité d'exécution.
+                                    KORALYS a dépassé mes attentes avec leur expertise technique et leur capacité
                                     à concrétiser fidèlement les concepts architecturaux les plus complexes."
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Navigation et pagination -->
-                    <div class="swiper-pagination mt-10"></div>
+                    <div class="mt-10 swiper-pagination"></div>
                     <div class="hidden md:block">
-                        <div class="swiper-button-prev absolute top-1/2 -left-12 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-colors z-10">
+                        <div class="absolute z-10 flex items-center justify-center w-12 h-12 transition-colors transform -translate-y-1/2 bg-white rounded-full shadow-lg swiper-button-prev top-1/2 -left-12 text-secondary hover:bg-primary hover:text-white">
                             <i class="fas fa-chevron-left"></i>
                         </div>
-                        <div class="swiper-button-next absolute top-1/2 -right-12 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-colors z-10">
+                        <div class="absolute z-10 flex items-center justify-center w-12 h-12 transition-colors transform -translate-y-1/2 bg-white rounded-full shadow-lg swiper-button-next top-1/2 -right-12 text-secondary hover:bg-primary hover:text-white">
                             <i class="fas fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    
+
         <!-- Section Contact avec Carte -->
-        <section class="relative py-24 bg-gradient-to-b from-gray-100 to-blue-50 text-gray-800" id="contact">
+        <section class="relative py-24 text-gray-800 bg-gradient-to-b from-gray-100 to-blue-50" id="contact">
             <div class="absolute inset-0 z-0 opacity-10">
-                <img src="https://images.unsplash.com/photo-1590644365607-5c9be5eeefae" 
-                     alt="Background" 
-                     class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1590644365607-5c9be5eeefae"
+                     alt="Background"
+                     class="object-cover w-full h-full">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-gray-100/90 to-blue-50/90"></div>
-            
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+            <div class="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
                     <div>
-                        <h2 class="text-4xl font-bold mb-6 text-blue-800">Contactez-nous</h2>
-                        <div class="w-24 h-1 bg-blue-500 mb-8"></div>
-                        <p class="text-xl mb-12 text-blue-700">
+                        <h2 class="mb-6 text-4xl font-bold text-blue-800">Contactez-nous</h2>
+                        <div class="w-24 h-1 mb-8 bg-blue-500"></div>
+                        <p class="mb-12 text-xl text-blue-700">
                             Discutons de votre projet et voyons comment nous pouvons vous aider à le concrétiser.
                         </p>
-                        
-                        <div class="space-y-8 mb-12">
+
+                        <div class="mb-12 space-y-8">
                             <div class="flex items-start gap-6">
-                                <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                <div class="flex items-center justify-center flex-shrink-0 bg-blue-100 rounded-full w-14 h-14">
+                                    <i class="text-xl text-blue-600 fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold mb-2 text-blue-800">Notre adresse</h3>
+                                    <h3 class="mb-2 text-xl font-bold text-blue-800">Notre adresse</h3>
                                     <p class="text-blue-600">123 Rue de la Construction, 75000 Paris</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start gap-6">
-                                <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-phone text-blue-600 text-xl"></i>
+                                <div class="flex items-center justify-center flex-shrink-0 bg-blue-100 rounded-full w-14 h-14">
+                                    <i class="text-xl text-blue-600 fas fa-phone"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold mb-2 text-blue-800">Téléphone</h3>
+                                    <h3 class="mb-2 text-xl font-bold text-blue-800">Téléphone</h3>
                                     <p class="text-blue-600">+33 1 23 45 67 89</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start gap-6">
-                                <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                <div class="flex items-center justify-center flex-shrink-0 bg-blue-100 rounded-full w-14 h-14">
+                                    <i class="text-xl text-blue-600 fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold mb-2 text-blue-800">Email</h3>
+                                    <h3 class="mb-2 text-xl font-bold text-blue-800">Email</h3>
                                     <p class="text-blue-600">contact@koralys.fr</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="flex space-x-4">
-                            <a href="#" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300">
-                                <i class="fab fa-facebook-f text-blue-600"></i>
+                            <a href="#" class="flex items-center justify-center w-12 h-12 transition-colors duration-300 bg-blue-100 rounded-full hover:bg-blue-200">
+                                <i class="text-blue-600 fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300">
-                                <i class="fab fa-linkedin-in text-blue-600"></i>
+                            <a href="#" class="flex items-center justify-center w-12 h-12 transition-colors duration-300 bg-blue-100 rounded-full hover:bg-blue-200">
+                                <i class="text-blue-600 fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors duration-300">
-                                <i class="fab fa-instagram text-blue-600"></i>
+                            <a href="#" class="flex items-center justify-center w-12 h-12 transition-colors duration-300 bg-blue-100 rounded-full hover:bg-blue-200">
+                                <i class="text-blue-600 fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
-                    
+
                     <div>
-                        <div class="bg-white p-8 rounded-2xl shadow-2xl border border-blue-100">
-                            <h3 class="text-2xl font-bold text-blue-800 mb-6">Envoyez-nous un message</h3>
+                        <div class="p-8 bg-white border border-blue-100 shadow-2xl rounded-2xl">
+                            <h3 class="mb-6 text-2xl font-bold text-blue-800">Envoyez-nous un message</h3>
                             <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
                                 @csrf
-                                
+
                                 @if(session('success'))
-                                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                    <div class="relative px-4 py-3 mb-4 text-green-700 bg-green-100 border border-green-400 rounded" role="alert">
                                         <span class="block sm:inline">{{ session('success') }}</span>
                                     </div>
                                 @endif
-                                
+
                                 @if(session('error'))
-                                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                    <div class="relative px-4 py-3 mb-4 text-red-700 bg-red-100 border border-red-400 rounded" role="alert">
                                         <span class="block sm:inline">{{ session('error') }}</span>
                                     </div>
                                 @endif
-                                
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                                     <div>
-                                        <label for="name" class="block text-sm font-medium text-blue-700 mb-1">Nom complet</label>
+                                        <label for="name" class="block mb-1 text-sm font-medium text-blue-700">Nom complet</label>
                                         <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('name') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
                                         @error('name')
-                                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
                                     <div>
-                                        <label for="email" class="block text-sm font-medium text-blue-700 mb-1">Email</label>
+                                        <label for="email" class="block mb-1 text-sm font-medium text-blue-700">Email</label>
                                         <input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 rounded-lg bg-blue-50 border @error('email') border-red-500 @else border-blue-200 @enderror focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required>
                                         @error('email')
-                                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="subject" class="block text-sm font-medium text-blue-700 mb-1">Sujet</label>
-                                    <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700" required>
+                                    <label for="subject" class="block mb-1 text-sm font-medium text-blue-700">Sujet</label>
+                                    <select id="subject" name="subject" class="w-full px-4 py-3 text-blue-700 transition-all duration-300 border border-blue-200 rounded-lg bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                                         <option value="">Sélectionnez un sujet</option>
                                         <option value="devis">Demande de devis</option>
                                         <option value="information">Demande d'information</option>
@@ -666,17 +663,17 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label for="message" class="block text-sm font-medium text-blue-700 mb-1">Message</label>
-                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-blue-50 border border-blue-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-blue-700 placeholder-blue-300" required></textarea>
+                                    <label for="message" class="block mb-1 text-sm font-medium text-blue-700">Message</label>
+                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 text-blue-700 placeholder-blue-300 transition-all duration-300 border border-blue-200 rounded-lg bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
                                 </div>
                                 <div class="flex items-start">
                                     <input type="checkbox" id="privacy" name="privacy" class="mt-1 mr-2" required>
-                                    <label for="privacy" class="text-blue-700 text-sm">
+                                    <label for="privacy" class="text-sm text-blue-700">
                                         J'accepte que mes données soient traitées conformément à la <a href="#" class="text-blue-600 hover:underline">politique de confidentialité</a>.
                                     </label>
                                 </div>
                                 <div>
-                                    <button type="submit" class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                    <button type="submit" class="flex items-center justify-center w-full px-6 py-4 text-lg font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1">
                                         Envoyer le message
                                         <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -689,9 +686,9 @@
                 </div>
             </div>
         </section>
-    
+
     @endsection
-        
+
         @push('scripts')
             <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -704,104 +701,104 @@
                         once: true,
                         mirror: false
                     });
-            
+
                     // Animation du hero
                     setTimeout(() => {
                         document.getElementById('hero-title').classList.add('animate-fadeIn');
                         document.getElementById('hero-title').style.opacity = '1';
                     }, 300);
-            
+
                     setTimeout(() => {
                         document.getElementById('hero-line').classList.add('animate-slideRight');
                         document.getElementById('hero-line').style.transform = 'translateX(0)';
                     }, 600);
-            
+
                     setTimeout(() => {
                         document.getElementById('hero-subtitle').classList.add('animate-fadeIn');
                         document.getElementById('hero-subtitle').style.opacity = '1';
                     }, 900);
-            
+
                     setTimeout(() => {
                         document.getElementById('hero-cta').classList.add('animate-fadeIn');
                         document.getElementById('hero-cta').style.opacity = '1';
                     }, 1200);
-            
+
                     // Slider Hero
                     let currentSlide = 0;
                     const slides = document.querySelectorAll('#hero-slider .slide');
                     const dots = document.querySelectorAll('.slider-dot');
-                    
+
                     function showSlide(index) {
                         slides.forEach(slide => slide.style.opacity = '0');
                         dots.forEach(dot => dot.classList.remove('active', 'bg-white', 'border-accent'));
                         dots.forEach(dot => dot.classList.add('bg-white/30', 'border-white/50'));
-                        
+
                         slides[index].style.opacity = '1';
                         dots[index].classList.add('active', 'bg-white', 'border-accent');
                         dots[index].classList.remove('bg-white/30', 'border-white/50');
-                        
+
                         currentSlide = index;
                     }
-                    
+
                     function nextSlide() {
                         currentSlide = (currentSlide + 1) % slides.length;
                         showSlide(currentSlide);
                     }
-                    
+
                     // Initialiser le premier slide
                     showSlide(0);
-                    
+
                     // Changer de slide toutes les 5 secondes
                     setInterval(nextSlide, 5000);
-                    
+
                     // Ajouter des événements de clic aux points
                     dots.forEach((dot, index) => {
                         dot.addEventListener('click', () => showSlide(index));
                     });
-            
+
                     // Slider des services
                     let serviceSlides = document.querySelectorAll('.services-slide');
                     let serviceCurrentSlide = 0;
-                    
+
                     function showServiceSlide(index) {
                         serviceSlides.forEach(slide => {
                             slide.style.display = 'none';
                         });
                         serviceSlides[index].style.display = 'block';
                     }
-                    
+
                     function nextServiceSlide() {
                         serviceCurrentSlide = (serviceCurrentSlide + 1) % serviceSlides.length;
                         showServiceSlide(serviceCurrentSlide);
                     }
-                    
+
                     // Initialiser le premier slide de service
                     showServiceSlide(0);
-                    
+
                     // Changer de slide toutes les 4 secondes
                     setInterval(nextServiceSlide, 4000);
-            
+
                     // Animation au scroll pour les éléments avec data-aos
                     window.addEventListener('scroll', () => {
                         const scrolled = window.scrollY;
-                        
+
                         // Parallax effect pour les sections avec images de fond
                         document.querySelectorAll('.parallax-bg').forEach(bg => {
                             const speed = bg.getAttribute('data-speed') || 0.5;
                             bg.style.transform = `translateY(${scrolled * speed}px)`;
                         });
                     });
-            
+
                     // Animation des compteurs
                     const counters = document.querySelectorAll('.counter');
                     const speed = 200; // Plus la valeur est basse, plus c'est rapide
-                    
+
                     const observerOptions = {
                         root: null,
                         rootMargin: '0px',
                         threshold: 0.1
                     };
-                    
+
                     const observer = new IntersectionObserver(function(entries, observer) {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -823,11 +820,11 @@
                             }
                         });
                     }, observerOptions);
-                    
+
                     counters.forEach(counter => {
                         observer.observe(counter);
                     });
-            
+
                     // Initialisation du slider de témoignages
                     const testimonialsSwiper = new Swiper('.testimonials-slider', {
                         slidesPerView: 1,
@@ -856,11 +853,11 @@
                             },
                         }
                     });
-            
+
                     // Filtres de projets
                     const filterButtons = document.querySelectorAll('[data-filter]');
                     const projectItems = document.querySelectorAll('[data-category]');
-                    
+
                     filterButtons.forEach(button => {
                         button.addEventListener('click', () => {
                             // Réinitialiser les styles des boutons
@@ -868,13 +865,13 @@
                                 btn.classList.remove('bg-accent');
                                 btn.classList.add('bg-white/10');
                             });
-                            
+
                             // Appliquer le style actif au bouton cliqué
                             button.classList.remove('bg-white/10');
                             button.classList.add('bg-accent');
-                            
+
                             const filter = button.getAttribute('data-filter');
-                            
+
                             projectItems.forEach(item => {
                                 if (filter === 'all' || item.getAttribute('data-category') === filter) {
                                     item.style.display = 'block';
@@ -884,15 +881,15 @@
                             });
                         });
                     });
-            
+
                     // Smooth scroll pour les liens d'ancrage
                     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         anchor.addEventListener('click', function (e) {
                             e.preventDefault();
-                            
+
                             const targetId = this.getAttribute('href');
                             const targetElement = document.querySelector(targetId);
-                            
+
                             if (targetElement) {
                                 window.scrollTo({
                                     top: targetElement.offsetTop - 100,
@@ -901,11 +898,11 @@
                             }
                         });
                     });
-            
+
                     // Animation au scroll pour les éléments avec data-aos
                     window.addEventListener('scroll', () => {
                         const scrolled = window.scrollY;
-                        
+
                         // Parallax effect pour les sections avec images de fond
                         document.querySelectorAll('.parallax-bg').forEach(bg => {
                             const speed = bg.getAttribute('data-speed') || 0.5;

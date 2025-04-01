@@ -1,5 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    purge: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
@@ -7,14 +12,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'primary': '#FF6B35',
-        'secondary': '#2E4057',
-        'accent': '#FFD23F',
-      },
-      fontFamily: {
-        'sans': ['Poppins', 'sans-serif'],
-      },
     },
   },
   plugins: [],
